@@ -1,0 +1,37 @@
+/* FileUpload.css */
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.dropzone {
+  border: 2px dashed var(--loginColor);
+  border-radius: var(--loginBorderRadus);
+  padding: 2rem;
+  color: var(--loginColor);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.dropzone:hover {
+  background-color: var(--loginInputHoverBackgroundColor);
+}
+
+.file-upload p {
+  margin-top: 1.5rem;
+  color: var(--loginColor);
+}
+
+.file-upload p.error {
+  color: red;
+}
+
+.file-upload p.success {
+  color: green;
+}
+

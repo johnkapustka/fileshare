@@ -1,30 +1,41 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Navbar from './Navbar';
 import FileUpload from './FileUpload';
-import FileDownload from './FileDownload';
+import MyFiles from './MyFiles';
+import SharedWithYou from './SharedWithYou';
+import Register from './Register';
+import Home from './Home';
+import Login from './Login';
+import './App.css'
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  }
+
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Upload</Link>
-              </li>
-              <li>
-                <Link to="/download">Download</Link>
-              </li>
-            </ul>
-          </nav>
+      {isLoggedIn ? (
+        <>
+          <Navbar />
           <Routes>
-            <Route path="/" element={<FileUpload />} />
-            <Route path="/download" element={<FileDownload />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/upload" element={<FileUpload />} />
+            <Route path="/my-files" element={<MyFiles />} />
+            <Route path="/shared-with-you" element={<SharedWithYou />} />
+            <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
-        </header>
-      </div>
+        </>
+      ) : (
+        <Routes>
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<Navigate to="/login" />} />
+        </Routes>
+      )}
     </Router>
   );
 }

@@ -1,0 +1,40 @@
+nav {
+  background-color: var(--bodyBackgroundColor);
+  padding: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 1em;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  width: 9rem;
+  background-color: var(--bodyBackgroundColor);
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+nav ul li a {
+  color: var(--navbarColor);
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+nav ul li:hover {
+  background-color: var(--navbarHoverColor);
+}
+
+nav ul li a:hover {
+  color: var(--navbarColor);
+  text-decoration: none;
+}
+

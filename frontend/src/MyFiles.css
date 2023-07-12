@@ -1,0 +1,98 @@
+/* MyFiles.css */
+
+.myFiles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myFiles h1 {
+  color: var(--loginColor);
+  font-size: 2.5rem;
+}
+
+.fileItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.fileItem h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.fileItem button {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: var(--loginSubmitBackgroundColor);
+  color: var(--loginSubmitColor);
+  border: none;
+  border-radius: var(--loginBorderRadus);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 50px;
+  z-index: 1000;
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal form input {
+  color: #000; 
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.modal form button {
+  cursor: pointer;
+  padding: 4px 8px;
+  width: 80%;
+  background-color: var(--loginSubmitBackgroundColor);
+  color: var(--loginSubmitColor);
+  border: none;
+  border-radius: var(--loginBorderRadus);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #000; 
+  font-size: 0.9em;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+

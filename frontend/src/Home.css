@@ -1,0 +1,20 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.home h1 {
+  color: var(--loginColor);
+  font-size: 2.5rem;
+}
+
+.home p {
+  color: var(--loginColor);
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 80%;
+}
+

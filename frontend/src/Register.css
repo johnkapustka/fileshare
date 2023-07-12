@@ -1,0 +1,122 @@
+:root {
+  --registerBorderRadus: 0.25rem;
+  --registerColor: #eee;
+  --registerInputBackgroundColor: #3b4148;
+  --registerInputHoverBackgroundColor: #434a52;
+  --registerLabelBackgroundColor: #363b41;
+  --registerSubmitBackgroundColor: #ea4c88;
+  --registerSubmitColor: #eee;
+  --registerSubmitHoverBackgroundColor: #d44179;
+}
+
+.align {
+  display: grid;
+  place-items: center;
+}
+
+.grid {
+  inline-size: 90%;
+  margin-inline: auto;
+  max-inline-size: 20rem;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.icons {
+  display: none;
+}
+
+.icon {
+  block-size: 1em;
+  display: inline-block;
+  fill: var(--iconFill);
+  inline-size: 1em;
+  vertical-align: middle;
+}
+
+.form {
+  display: grid;
+  gap: var(--formGap);
+}
+
+.form input[type="password"],
+.form input[type="text"],
+.form input[type="submit"] {
+  inline-size: 100%;
+}
+
+.form__field {
+  display: flex;
+}
+
+.form__input {
+  flex: 1;
+}
+
+.register {
+  color: var(--registerColor);
+}
+
+.register label,
+.register input[type="text"],
+.register input[type="password"],
+.register input[type="submit"] {
+  border-radius: var(--registerBorderRadus);
+  padding: 1rem;
+}
+
+.register label {
+  background-color: var(--registerLabelBackgroundColor);
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding-inline: 1.25rem;
+}
+
+.register input[type="password"],
+.register input[type="text"] {
+  background-color: var(--registerInputBackgroundColor);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.register input[type="password"]:focus,
+.register input[type="password"]:hover,
+.register input[type="text"]:focus,
+.register input[type="text"]:hover {
+  background-color: var(--registerInputHoverBackgroundColor);
+}
+
+.register input[type="submit"] {
+  background-color: var(--registerSubmitBackgroundColor);
+  color: var(--registerSubmitColor);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.register input[type="submit"]:focus,
+.register input[type="submit"]:hover {
+  background-color: var(--registerSubmitHoverBackgroundColor);
+}
+
+.person-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.lock-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.text--center a:hover {
+  cursor: pointer;
+}

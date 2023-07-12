@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const FileDownload = () => {
-  const [code, setCode] = useState('');
+const FileDownload = ({ fileId }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  useEffect(() => {
     setLoading(true);
     setError('');
+    const authToken = localStorage.getItem('authToken');
 
     axios({
       method: 'get',
-      url: `http://localhost:8000/download/?code=${code}`,
+      url: `http://localhost:8000/download/${fileId}/`,
       responseType: 'blob',
+      headers: {
+        'Authorization': `Token ${authToken}`
+      }
     })
     .then((response) => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
@@ -28,20 +30,18 @@ const FileDownload = () => {
       link.click();
     })
     .catch((error) => {
-      setError('Error downloading file. Please check the download code and try again.');
+      setError('Error downloading file. Please try again.');
     })
     .finally(() => {
       setLoading(false);
     });
-  };
+  }, [fileId]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={code} onChange={(e) => setCode(e.target.value)} placeholder="Enter download code" />
-      <button type="submit" disabled={loading}>Download</button>
+    <div>
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}
-    </form>
+    </div>
   );
 };
 
