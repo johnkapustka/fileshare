@@ -19,7 +19,6 @@ Fileshare is a web application that enables users to upload, download, and share
 1. Clone the repository:
 ```
 git clone https://github.com/johnkapustka/fileshare
-cd backend
 ```
 
 2. Install python packages:
@@ -29,6 +28,7 @@ pip install -r requirements.txt
 
 3. Run migrations:
 ```
+cd backend
 python manage.py migrate
 ```
 
